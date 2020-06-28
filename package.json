@@ -1,0 +1,18 @@
+{
+  "name": "notes_app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node ./node_modules/http-server/bin/http-server",
+    "build:styles": "node ./node_modules/node-sass/bin/node-sass ./styles/index.scss ./public/index.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {}
+}
