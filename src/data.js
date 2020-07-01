@@ -13,5 +13,4 @@ var categories = [
     }
 ]
 
-// export default categories;
 

@@ -16,8 +16,3 @@ function persistData () {
   localStorage.setItem('notes', JSON.stringify({notes}));
 }
 
-// export default {
-//   generateRandomId,
-//   initStorage,
-//   persistData,
-// }

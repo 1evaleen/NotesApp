@@ -1,5 +1,3 @@
-// import './dragDrop';
-// import categories from './public/data.js';
 
 let notes = [];
 const categoriesEl = document.querySelector('.categories__list');
