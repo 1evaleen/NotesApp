@@ -15,9 +15,8 @@ $imgPath: '../assets';
     background-position: center;
 }
 body {
-    background-color: lightsteelblue;
+    background-image: url('#{$imgPath}/vincent-burkhead-LhlxYMfnTF0-unsplash.jpg');
     background-size: cover; 
-    background-repeat: no-repeat;
 }
 .notes-app { 
     border: 2px solid $primary-colour;

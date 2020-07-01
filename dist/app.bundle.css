@@ -4,9 +4,8 @@
   background-position: center; }
 
 body {
-  background-color: lightsteelblue;
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../assets/vincent-burkhead-LhlxYMfnTF0-unsplash.jpg");
+  background-size: cover; }
 
 .notes-app {
   border: 2px solid black;
