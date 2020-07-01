@@ -1,11 +1,14 @@
-$primary-colour: black;
+$primary-colour: #211c1c;
 $secondry-colour: white;
 $text-colour-1: #c7c7c7;
-$select-colour-light: rgb(119, 119, 119);
-$select-colour-dark: rgba(61, 61, 61, 0.795);
+$text-colour-2: #a1a0a0;
+$select-colour-light: #f7f2ef;
+$select-colour-dark: #55504c;
 $font-stack: roboto;
 $font-size-h1: 19pt;
 $font-size-p: 12pt;
+$font-weight-bold: 500;
+$font-weight-light: 300;
 
 $imgPath: '../assets'; 
 
@@ -29,8 +32,9 @@ body {
     bottom: 50px;
 }
 .curr-cat {
-    text-decoration: underline;
-    text-decoration-color: $text-colour-1;
+    color: $secondry-colour !important;
+    font-weight: $font-weight-bold !important;
+
 }
 .curr-note {
     background-color: $primary-colour;
@@ -74,9 +78,10 @@ body {
             font-family: $font-stack;
             color: $text-colour-1;
             font-size: $font-size-h1;
+            font-weight: $font-weight-light;
             padding: 20px;
             
-            &__:hover {
+            &:hover {
                 background-color: $select-colour-dark;
                 cursor: pointer;
                 color: $secondry-colour;        
@@ -167,7 +172,7 @@ body {
             &__title {
                 font-family: $font-stack;
                 font-size: $font-size-p;
-                font-weight: 600;
+                font-weight: $font-weight-bold;
                 line-height: 34px;
                 padding-top: 8px;
                 padding-left: 30px;
@@ -179,7 +184,8 @@ body {
             &__body {
                 font-family: $font-stack;
                 font-size: $font-size-p;
-                color: $text-colour-1;
+                color: $text-colour-2;
+                font-weight: $font-weight-light;
                 padding-bottom: 8px;
                 padding-right: 20px;
                 white-space: nowrap;
@@ -212,6 +218,7 @@ body {
 
     &__title {
         font-family: $font-stack;
+        font-weight: $font-weight-bold;
         width: calc(100% - 80px);
         overflow: visible;
         margin-top: 40px;
@@ -219,7 +226,6 @@ body {
         margin-right: 40px;
         margin-bottom: 20px;
         font-size: 20px;
-        font-weight: 700;
         border: none;
         &:focus {
             outline: none;
@@ -228,6 +234,7 @@ body {
     &__body {
         font-family: $font-stack; 
         font-size: $font-size-p;
+        font-weight: $font-weight-light;
         line-height: 20pt;
         width: calc(100% - 80px);
         margin: 0 40px;

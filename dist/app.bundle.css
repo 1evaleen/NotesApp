@@ -8,7 +8,7 @@ body {
   background-size: cover; }
 
 .notes-app {
-  border: 2px solid black;
+  border: 2px solid #211c1c;
   border-radius: 25px;
   background-color: white;
   position: absolute;
@@ -18,21 +18,21 @@ body {
   bottom: 50px; }
 
 .curr-cat {
-  text-decoration: underline;
-  text-decoration-color: #c7c7c7; }
+  color: white !important;
+  font-weight: 500 !important; }
 
 .curr-note {
-  background-color: black;
+  background-color: #211c1c;
   color: #c7c7c7; }
 
 .active-zone {
-  background-color: rgba(61, 61, 61, 0.795); }
+  background-color: #55504c; }
 
 .over-zone {
-  background-color: #777777; }
+  background-color: #f7f2ef; }
 
 .categories {
-  background-color: black;
+  background-color: #211c1c;
   position: absolute;
   left: 0;
   top: 0;
@@ -59,9 +59,10 @@ body {
       font-family: roboto;
       color: #c7c7c7;
       font-size: 19pt;
+      font-weight: 300;
       padding: 20px; }
-      .categories__list__item__:hover {
-        background-color: rgba(61, 61, 61, 0.795);
+      .categories__list__item:hover {
+        background-color: #55504c;
         cursor: pointer;
         color: white; }
   .categories__add-new-category-btn {
@@ -77,7 +78,7 @@ body {
     z-index: 200; }
 
 .notes {
-  border-right: 1px solid black;
+  border-right: 1px solid #211c1c;
   position: absolute;
   left: 215px;
   top: 0;
@@ -106,9 +107,9 @@ body {
       outline: none;
       border: 1px solid white; }
     .notes__search__input:focus {
-      border-color: black; }
+      border-color: #211c1c; }
     .notes__search__section-line {
-      background-color: black;
+      background-color: #211c1c;
       height: 1px;
       width: 243px;
       position: absolute;
@@ -130,11 +131,11 @@ body {
       width: 100%;
       height: 70px; }
       .notes__list__item:hover {
-        background-color: #777777; }
+        background-color: #f7f2ef; }
       .notes__list__item__title {
         font-family: roboto;
         font-size: 12pt;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 34px;
         padding-top: 8px;
         padding-left: 30px;
@@ -145,7 +146,8 @@ body {
       .notes__list__item__body {
         font-family: roboto;
         font-size: 12pt;
-        color: #c7c7c7;
+        color: #a1a0a0;
+        font-weight: 300;
         padding-bottom: 8px;
         padding-right: 20px;
         white-space: nowrap;
@@ -159,9 +161,9 @@ body {
     right: 20px;
     width: 25px;
     height: 25px;
-    border: solid 12px black;
+    border: solid 12px #211c1c;
     border-radius: 50%;
-    background-color: black;
+    background-color: #211c1c;
     z-index: 200; }
 
 .editor {
@@ -172,6 +174,7 @@ body {
   width: calc(100% - 215px - 305px); }
   .editor__title {
     font-family: roboto;
+    font-weight: 500;
     width: calc(100% - 80px);
     overflow: visible;
     margin-top: 40px;
@@ -179,13 +182,13 @@ body {
     margin-right: 40px;
     margin-bottom: 20px;
     font-size: 20px;
-    font-weight: 700;
     border: none; }
     .editor__title:focus {
       outline: none; }
   .editor__body {
     font-family: roboto;
     font-size: 12pt;
+    font-weight: 300;
     line-height: 20pt;
     width: calc(100% - 80px);
     margin: 0 40px;
@@ -204,9 +207,9 @@ body {
   right: 20px;
   width: 25px;
   height: 25px;
-  border: solid 12px black;
+  border: solid 12px #211c1c;
   border-radius: 50%;
-  background-color: black;
+  background-color: #211c1c;
   z-index: 200;
   background-image: url("../assets/bin.svg");
   background-position: center;
