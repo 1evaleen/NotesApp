@@ -27,3 +27,4 @@ https://youtu.be/qJrTLh-wZNc
 * enable add new categories
 * enable re-ordering notes and categories with drag and drop
 * button hover highlight
+* refactor code into components
