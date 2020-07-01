@@ -7,16 +7,15 @@ $font-stack: roboto;
 $font-size-h1: 19pt;
 $font-size-p: 12pt;
 
-$imgPath: './assets'; 
+$imgPath: '../assets'; 
 
 %button-style {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
-
 body {
-    background-image: url('#{$imgPath}/mathew-schwartz-3SWQCLmxH1U-unsplash.jpg');
+    background-color: lightsteelblue;
     background-size: cover; 
     background-repeat: no-repeat;
 }

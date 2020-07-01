@@ -3,15 +3,30 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node ./node_modules/http-server/bin/http-server",
-    "build:styles": "node ./node_modules/node-sass/bin/node-sass ./styles/index.scss ./public/index.css -w"
+    "styles": "node-sass ./styles/index.scss ./dist/app.bundle.css -w",
+    "build": "webpack --watch --mode=development --devtool=inline-source-map --info-verbosity verbose"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.3",
+    "@babel/plugin-proposal-private-methods": "^7.10.1",
+    "@babel/plugin-transform-classes": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "css-loader": "^3.6.0",
+    "dart-sass": "^1.25.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "sass": "^1.26.8",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {}
 }
