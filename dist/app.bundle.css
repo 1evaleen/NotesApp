@@ -26,7 +26,7 @@ body {
   color: #c7c7c7; }
 
 .active-zone {
-  background-color: #55504c; }
+  background-color: #342f2a; }
 
 .over-zone {
   background-color: #f7f2ef; }
@@ -62,7 +62,7 @@ body {
       font-weight: 300;
       padding: 20px; }
       .categories__list__item:hover {
-        background-color: #55504c;
+        background-color: #342f2a;
         cursor: pointer;
         color: white; }
   .categories__add-new-category-btn {
@@ -133,7 +133,7 @@ body {
       .notes__list__item:hover {
         background-color: #f7f2ef; }
       .notes__list__item:hover.curr-note {
-        background-color: #211c1c; }
+        background-color: #342f2a; }
       .notes__list__item__title {
         font-family: roboto;
         font-size: 12pt;

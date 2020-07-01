@@ -3,7 +3,7 @@ $secondry-colour: white;
 $text-colour-1: #c7c7c7;
 $text-colour-2: #a1a0a0;
 $select-colour-light: #f7f2ef;
-$select-colour-dark: #55504c;
+$select-colour-dark: #342f2a;
 $font-stack: roboto;
 $font-size-h1: 19pt;
 $font-size-p: 12pt;
@@ -170,7 +170,7 @@ body {
                 background-color: $select-colour-light;
             }
             &:hover.curr-note {
-                background-color: $primary-colour;
+                background-color: $select-colour-dark;
             }
 
             &__title {
