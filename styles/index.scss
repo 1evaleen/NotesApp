@@ -36,7 +36,7 @@ body {
     font-weight: $font-weight-bold !important;
 
 }
-.curr-note {
+.selected {
     background-color: $primary-colour;
     color: $text-colour-1;
 }
@@ -169,7 +169,7 @@ body {
             &:hover {
                 background-color: $select-colour-light;
             }
-            &:hover.curr-note {
+            &:hover.selected {
                 background-color: $select-colour-dark;
             }
 

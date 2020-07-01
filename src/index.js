@@ -11,8 +11,6 @@ const delNoteBtn = document.querySelector('.delete-btn');
 const searchInput = document.querySelector('.notes__search__input');
 const catMenu = document.querySelector('.categories__menu-btn');
 let currentCat = categories[0].id;
-const currentNote = document.querySelector('.curr-note');
-console.log(currentNote);
 
 init();
 
@@ -49,11 +47,11 @@ function selectNote (evt) {
         return;
     }
     let id = evt.target.parentElement.dataset.id;
-    let selectedNote = document.querySelector('.curr-note');
+    let selectedNote = document.querySelector('.selected');
     if (selectedNote) {
-        selectedNote.classList.remove('curr-note');
+        selectedNote.classList.remove('selected');
     }
-    evt.target.parentElement.classList.add('curr-note')
+    evt.target.parentElement.classList.add('selected')
     renderNoteEditor(notes, id);
 }
 function buildCategoryListItem (catName, id, isSelected) {
@@ -76,7 +74,7 @@ function buildNoteListItem (data, catId, isSelected) {
     noteEl.classList.add('draggable');
     noteTitleEl.className = 'notes__list__item__title';
     noteBodyEl.className = 'notes__list__item__body';
-    isSelected && noteEl.classList.add('curr-note');
+    isSelected && noteEl.classList.add('selected');
     noteEl.dataset.id = data.id;
     noteEl.dataset.catId = catId;
     noteEl.appendChild(noteTitleEl);
@@ -175,7 +173,7 @@ function onInputSaveNoteTitle (evt) {
     updateCurrentNotesListItemTitle(newTitle);
 }
 function updateCurrentNotesListItemTitle (val) {
-    let title = document.querySelector('.curr-note .notes__list__item__title');
+    let title = document.querySelector('.selected .notes__list__item__title');
     title.innerText = val;
 }
 function onInputSaveNoteBody (evt) {
@@ -190,7 +188,7 @@ function onInputSaveNoteBody (evt) {
     updateCurrentNotesListItemBody(newBody);
 }
 function updateCurrentNotesListItemBody (val) {
-    let body = document.querySelector('.curr-note .notes__list__item__body');
+    let body = document.querySelector('.selected .notes__list__item__body');
     body.innerText = val;
 }
 function displayFirstNoteInNoteEditor (notes, catId) {
@@ -203,7 +201,7 @@ function displayFirstNoteInNoteEditor (notes, catId) {
     }
 }
 function highlightFirstNoteItem () {
-    notesListEl.children[0] && notesListEl.children[0].classList.add('curr-note');
+    notesListEl.children[0] && notesListEl.children[0].classList.add('selected');
 }
 function searchCurrNotes (evt) {
     let currNotes = notes.filter(n => n.category_id === currentCat);
@@ -229,7 +227,7 @@ function initDropZones (dropZones) {
     }
 }
 function initDraggable (draggable) {
-    draggable.addEventListener('dragstart', dragstartHandler);
+    draggable.addEventListener('dragstart', dragStartHandler);
     draggable.addEventListener('dragend', dragEndHandler);
     draggable.setAttribute('draggable', 'true');
 }
@@ -239,7 +237,7 @@ function initDropZone (dropZone) {
     dropZone.addEventListener('dragleave', dropZoneLeaveHandler);
     dropZone.addEventListener('drop', dropZoneDropHandler);
 }
-function dragstartHandler(evt) {
+function dragStartHandler(evt) {
     setDropZonesHighlight();
     this.classList.add('dragged');
     evt.dataTransfer.setData('type', 'dragged');
@@ -270,16 +268,26 @@ function dropZoneDropHandler (evt) {
     let draggedItem = document.querySelector('.dragged')
     let draggedElCatId = evt.dataTransfer.getData('catId');
     let draggedElNoteId = evt.dataTransfer.getData('noteId');
+
     if (selectedCatId === draggedElCatId) {
         draggedItem.classList.remove('dragged');
         return;
     } else {
-        onDropChangeNoteCat(selectedCatId, draggedElNoteId);
-        onDropDelFromCurrNoteList(draggedElNoteId, draggedElCatId);
+        changeNoteCat(selectedCatId, draggedElNoteId);
+        removeNoteNode(draggedElNoteId);
+        checkSelection(draggedElCatId);
     }
     evt.preventDefault();
 }
-function onDropChangeNoteCat (catId, noteId) {
+function checkSelection (catID) {
+    let selectedNote = document.querySelector('.selected');
+    if (!selectedNote) {
+        highlightFirstNoteItem();
+        displayFirstNoteInNoteEditor(notes, catID)
+    }
+
+}
+function changeNoteCat (catId, noteId) {
     for (var i = 0; i < notes.length; i++) {
         if (notes[i].id === noteId) {
             notes[i].category_id = catId
@@ -287,11 +295,10 @@ function onDropChangeNoteCat (catId, noteId) {
     }
     persistData();
 }
-function onDropDelFromCurrNoteList (noteId, catId) {
+function removeNoteNode (noteId) {
     let draggedNote = document.querySelector(`.notes__list__item[data-id="${noteId}"]`);
     draggedNote.remove();
-    highlightFirstNoteItem();
-    displayFirstNoteInNoteEditor(notes, catId)
+
 }
 function setDropZonesHighlight (highlight = true) {
     const dropZones = document.querySelectorAll('.drop-zone');

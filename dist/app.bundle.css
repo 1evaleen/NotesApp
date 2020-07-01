@@ -21,7 +21,7 @@ body {
   color: white !important;
   font-weight: 500 !important; }
 
-.curr-note {
+.selected {
   background-color: #211c1c;
   color: #c7c7c7; }
 
@@ -132,7 +132,7 @@ body {
       height: 70px; }
       .notes__list__item:hover {
         background-color: #f7f2ef; }
-      .notes__list__item:hover.curr-note {
+      .notes__list__item:hover.selected {
         background-color: #342f2a; }
       .notes__list__item__title {
         font-family: roboto;
