@@ -22,3 +22,4 @@ A clean, minimalistic app to take notes and organise them in categories.
 * minimise categories for a cleaner look
 * enable add new categories
 * enable re-ordering notes and categories with drag and drop
+* button hover highlight
