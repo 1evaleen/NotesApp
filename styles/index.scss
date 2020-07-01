@@ -169,6 +169,10 @@ body {
             &:hover {
                 background-color: $select-colour-light;
             }
+            &:hover.curr-note {
+                background-color: $primary-colour;
+            }
+
             &__title {
                 font-family: $font-stack;
                 font-size: $font-size-p;

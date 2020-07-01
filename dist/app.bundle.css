@@ -132,6 +132,8 @@ body {
       height: 70px; }
       .notes__list__item:hover {
         background-color: #f7f2ef; }
+      .notes__list__item:hover.curr-note {
+        background-color: #211c1c; }
       .notes__list__item__title {
         font-family: roboto;
         font-size: 12pt;
