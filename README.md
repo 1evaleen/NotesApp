@@ -17,7 +17,7 @@ A clean, minimalistic app to take notes and organise them in categories.
 Watch the demo on YouTube
 https://youtu.be/qJrTLh-wZNc
 
-![demo-image](demo/home-page.png)
+[![demo-image](demo/home-page.png)](https://youtu.be/qJrTLh-wZNc)
 
 ## Further features to be implemented
 
