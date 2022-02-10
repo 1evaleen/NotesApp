@@ -20,7 +20,7 @@
     "babel-plugin-transform-es2015-classes": "^6.24.1",
     "css-loader": "^3.6.0",
     "dart-sass": "^1.25.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.4",
     "sass": "^1.26.8",
     "sass-loader": "^8.0.2",
